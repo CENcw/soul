@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/guangchang/main",
+    "pages/xinxi/main",
+    "pages/geren/main",
+    "pages/xingqiu/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#017cc0",
+    "backgroundColor": "#f8f8f8",
+    "list": [
+      {
+        "pagePath": "pages/xingqiu/main",
+         "text": "星球",
+         "iconPath": "/static/images/icon_publish_setting_selected.png",
+         "selectedIconPath": "/static/images/icon_publish_setting_selected.png"
+       },
+       {
+         "pagePath": "pages/guangchang/main",
+         "text": "广场",
+         "iconPath": "/static/images/icon_publish_setting_selected.png",
+         "selectedIconPath": "/static/images/icon_publish_setting_selected.png"
+       },
+       {
+         "pagePath": "pages/guangchang/main",
+         "iconPath": "/static/images/icon_tabbar_release.png",
+         "selectedIconPath": "/static/images/icon_tabbar_release.png"
+       },
+       {
+          "pagePath": "pages/xinxi/main",
+         "text": "信息",
+         "iconPath": "/static/images/icon_publish_setting_selected.png",
+         "selectedIconPath": "/static/images/icon_publish_setting_selected.png"
+       },
+       {
+         "pagePath": "pages/geren/main",
+         "text": "个人",
+         "iconPath": "/static/images/icon_publish_setting_selected.png",
+         "selectedIconPath": "/static/images/icon_publish_setting_selected.png"
+       }
+    ]
+  }
+}
