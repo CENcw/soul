@@ -8,17 +8,26 @@
     <div><input type="text"></div>
     <div class="divTab" v-if="nowIndex===0">
       <ul> 
-        <li class="ssLi" v-for="(itemLi,index) in TjList" :key="index">
+        <li class="ssLi" v-for="(itemLi,imgIndex) in TjList" :key="imgIndex">
             <div class="ss_top clearfloat">
               <div class="ss_div_left">
                 <image class="ss_top_icon"  src="../../static/images/touxiang.png"></image>
               </div>
               <div class="ss_div_right">
-                <span class="ss_from">#来自元气才子星球</span>
+                <span  class="ss_from">#来自元气才子星球</span>
                 <span class="ss_time">1小时前</span>
-                <div class="ss_content">内容</div>
+                <div class="ss_content">
+                  <div class="ss_imgList clearfloat">
+                  <image :class="{sanImgClass:itemLi.imgUrl.length==3,moreImgClass:(itemLi.imgUrl.length!=1&&itemLi.imgUrl.length!=3)}"  v-for="(img,index) in itemLi.imgUrl"  :key="index" :src="img" alt=""></image></div>
+                  <span class="ss_title"></span>
+                </div>
                 <div class="pfBar">
-                  
+                  <ul class="pfBar_ul">
+                    <li class="pfBar_sc"><image src='../../static/images/ic_discollect.png'></image><span>1</span></li>
+                    <li class="pfBar_xh"><image src='../../static/images/icon_like.png'></image><span>1</span></li>
+                    <li class="pfBar_pl"><image src='../../static/images/icon_comment.png'></image><span>1</span></li>
+                    <li class="pfBar_zf"><image src='../../static/images/ic_zhuanfa.png'></image><span>1</span></li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -34,6 +43,7 @@ page{
   font-family:Microsoft YaHei; 
   font-weight: 500;
 }
+
 .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
 .clearfloat{zoom:1}
 .bottomLine{
@@ -68,14 +78,14 @@ page{
 .divTab {
   background: #FFFFFF;
   width: 100%;
-  height: 300px;
+  /* height: 300px; */
 } 
 .ss_top{
   height: 100%;
 }
 .divTab .ssLi{
   padding: 10px 15px;
-  height: 310px;
+  /* height: 310px; */
 }
 .divTab .ss_from{
   display: block;
@@ -88,6 +98,8 @@ page{
 .ss_div_right{
   float: left;
   width: 88%;
+  height: 100%;
+  position: relative;
 }
 .ss_div_left{
    float: left;
@@ -99,9 +111,52 @@ page{
   height: 30px;
 }
 .ss_content{
-  background: #07BB9C;
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
+}
+.pfBar{
+ margin-top: 10px;
+}
+.pfBar_ul li{
+  float: left;
+}
+.pfBar_ul li span{
+  display:inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.pfBar_ul .pfBar_sc {
+    width: 85px;
+}
+.pfBar_xh,.pfBar_pl{
+ width: 70px;
+}
+.pfBar_ul image{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.ss_imgList{
+  width: 100%;
+  margin-top: 12px;
+}
+.ss_imgList image{
+  max-width: 292px;
+  max-height: 196px;
+  float: left;
+}
+.sanImgClass{
+  width: 85px;
+  height: 90px;
+   margin-right: 10px;
+  border-radius: 10px;
+}
+.moreImgClass{
+  width: 93px;
+  height: 90px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 </style>
 
@@ -111,7 +166,13 @@ export default {
     return {
       tabsParam: [{name:"推荐"},{name:"关注"}],
       nowIndex: 0,
-      TjList:[1]
+      TjList:[
+        {imgUrl:['../../static/images/ceshi.jpg']},
+        {imgUrl:['../../static/images/ceshi3.jpg']},
+        {imgUrl:['../../static/images/fj1.jpg']},
+        {imgUrl:['../../static/images/fj1.jpg','../../static/images/fj2.jpg','../../static/images/fj3.jpg']},
+        {imgUrl:['../../static/images/fj1.jpg','../../static/images/fj2.jpg','../../static/images/fj3.jpg','../../static/images/fj4.jpg']},
+        ],
     };
   },
   created() {},
