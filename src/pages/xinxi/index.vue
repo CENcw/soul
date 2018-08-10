@@ -7,11 +7,23 @@
       <span class="xx_total">暂无信息</span>
      </div>
      <div class="xx_topBar_right">
-       <span></span>
+       <span class="xx_topBar_right_dian"></span>
        <span>允许匹配</span>
      </div>
    </div>
-   <div></div>
+   <div>
+     <div class="zhuti">
+       <image class="zhutiImg" src="../../../static/images/logo_soul_circle.png"></image>  
+       <div class="gftitle">
+         <span class="zhutuTitle">Soul官方</span>
+         <span class="zhutiBq">萌萌哒"女友猫"</span>
+       </div>
+     </div>
+     <div class="Sortno">
+       <span class="SortnoText">点亮排序</span>
+       <image class="ltSortno" src='../../../../static/images/conversation_sort.png'></image>
+     </div>
+   </div>
   <vue-tab-bar></vue-tab-bar>
 </div>
 </template>
@@ -25,27 +37,78 @@ page{
 .clearfloat{zoom:1}
 .xx_topBar_left{
   float: left;
+  margin-left: 12px;
 }
 .xx_topBar{
   position: relative;
 }
 .xx_topBar_left .sl{
   display: block;
- font-size: 26px;
+ font-size: 23px;
  margin-bottom: 10px;
 }
 .xx_topBar_right{
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 5px;
+  right: 10px;
 }
 .xx_topBar .gz{
   width: 100%;
+}
+.xx_topBar_right_dian{
+  display: inline-block;
+  margin-right: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #FFFE02;
 }
 .xx_topBar .gz image{
   float: right;
   width: 25px;
   height: 20px;
+   margin-right: 10px;
+}
+.zhuti{
+  height: 60px;
+  display:flex;
+}
+.zhutiImg{
+  width: 40px;
+  height: 40px;
+  vertical-align: top;
+  margin:auto 10px auto 20px;
+}
+.gftitle{
+  display: inline-block;
+  margin: auto 0;
+}
+.zhutuTitle{
+  font-size: 16px;
+  color: #2BC6AB;
+}
+.zhutiBq{
+  display: block;
+  font-size: 14px;
+  color: #C6C6C6;
+}
+.ltSortno{
+  width: 20px;
+  height: 15px;
+  margin: auto 0;
+  margin-left: auto;
+  margin-right: 10px;
+}
+.Sortno{
+  height: 30px;
+  line-height: 30px;
+  display: flex;
+  background-color: #FAFAFA;
+}
+.SortnoText{
+  margin-left: 20px;
+  font-size: 14px;
+  color: #838383;
 }
 </style>
 
