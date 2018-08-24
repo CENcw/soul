@@ -18,7 +18,7 @@
                 <span class="ss_time">1小时前</span>
                 <div class="ss_content">
                   <div class="ss_imgList clearfloat">
-                  <image :class="{sanImgClass:itemLi.imgUrl.length==3,moreImgClass:(itemLi.imgUrl.length!=1&&itemLi.imgUrl.length!=3)}"  v-for="(img,index) in itemLi.imgUrl"  :key="index" :src="img" alt=""></image></div>
+                  <image :class="{sanImgClass:itemLi.imgUrl.length==3,moreImgClass:(itemLi.imgUrl.length!=1&&itemLi.imgUrl.length!=3)}" @load="imageLoad"   v-for="(img,index) in itemLi.imgUrl"  :key="index" :src="img.url" :style={width:img.width} alt="" ></image></div>
                   <span class="ss_title"></span>
                 </div>
                 <div class="pfBar">
@@ -43,7 +43,6 @@ page{
   font-family:Microsoft YaHei; 
   font-weight: 500;
 }
-
 .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
 .clearfloat{zoom:1}
 .bottomLine{
@@ -143,7 +142,6 @@ page{
 .ss_imgList image{
   max-width: 292px;
   max-height: 196px;
-  float: left;
 }
 .sanImgClass{
   width: 85px;
@@ -166,12 +164,12 @@ export default {
     return {
       tabsParam: [{name:"推荐"},{name:"关注"}],
       nowIndex: 0,
-      TjList:[
-        {imgUrl:['../../static/images/ceshi.jpg']},
-        {imgUrl:['../../static/images/ceshi3.jpg']},
-        {imgUrl:['../../static/images/fj1.jpg']},
-        {imgUrl:['../../static/images/fj1.jpg','../../static/images/fj2.jpg','../../static/images/fj3.jpg']},
-        {imgUrl:['../../static/images/fj1.jpg','../../static/images/fj2.jpg','../../static/images/fj3.jpg','../../static/images/fj4.jpg']},
+      TjList:[  
+        {imgUrl:[{url:'../../static/images/ceshi.jpg',width:'',height:''}]},
+        {imgUrl:[{url:'../../static/images/a1.jpg',width:'',height:''}]},
+        {imgUrl:[{url:'../../static/images/fj1.jpg',width:'',height:''}]},
+        {imgUrl:[{url:'../../static/images/fj1.jpg',width:'',height:''},{url:'../../static/images/fj2.jpg',width:'',height:''},{url:'../../static/images/fj3.jpg',width:'',height:''}]},
+        {imgUrl:[{url:'../../static/images/fj1.jpg',width:'',height:''},{url:'../../static/images/fj2.jpg',width:'',height:''},{url:'../../static/images/fj3.jpg',width:'',height:''},{url:'../../static/images/fj4.jpg',width:'',height:''}]},
         ],
     };
   },
@@ -187,7 +185,14 @@ export default {
          }
       }
       this.nowIndex = index;
-    }
+    },
+    imageLoad(ev) {
+      console.log(ev)
+      var width = ev.target.width;
+      var height = ev.target.height;
+      // img.width=width;
+      // img.height=height;
+  }
   }
 };
 </script>

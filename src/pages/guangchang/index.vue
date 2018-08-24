@@ -2,7 +2,7 @@
 <div>
   <div class="topBar">
     <div class="musicPlay clearfloat">
-      <image class="music" src="../../../../static/images/icon_music.png"></image>
+      <image class="music" src="../../static/images/icon_music.png"></image>
       <div>
         <TabItems></TabItems>
       </div>
